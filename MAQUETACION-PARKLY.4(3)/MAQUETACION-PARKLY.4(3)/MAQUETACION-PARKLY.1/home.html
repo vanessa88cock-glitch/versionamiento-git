@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio</title>
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+<!-- ENCABEZADO -->
+ <header>
+  <div class="header-left">
+      <img src="img/imgParkLyLogo.jpg" alt="Logo PARKLY" class="logo">
+      <h1>Gestion de Parqueaderos</h1>
+  </div>
+  <div class="header-right">
+    <p class="titulo-secundario ">Parqueadero Publico 24 Hrs</p>
+   <img src="img/reloj.jpg" alt="Reloj" class="reloj-icono">
+   <p id="hora-actual"></p> 
+  </div>
+</header>
+<!-- CONTENIDO PRINCIPAL -->
+ <main>
+  <div class="contenedor-home">
+<img src="img/imgParkLyLogo.jpg" class="imagen-home" alt="Logo Parkly">
+<h2>Bienvenido a PARKLY</h2>
+<a href="pagprincipal.html" class="btn-home">Ir al Menu Principal</a>
+  </div>
+ </main>
+ <!-- BOTON DE AYUDA -->
+  <button class="btn-ayuda" onclick="mostrarAyuda()">Ayuda</button>
+  <!-- MODAL DE AYUDA -->
+   <div id="modalAyuda" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarAyuda()">&times;</span>
+      <h3>Ayuda</h3>
+      <p>Bienvenido aqui podras navegar por el sistema PARKLY, registrar ingresos, consultar disponibilidad y mucho mas.</p>
+    </div>
+   </div>
+   <!-- PIE DE PAGINA -->
+    <footer>
+      <p>Sistema PARKLY - Version 1.0<br>Desarrollado por: Leidy Vanessa Prieto Cock</p>
+    </footer>
+<!-- SCRIPT DEL RELOJ -->
+ <script>
+  function actualizarHora() {
+    const hora= new
+    Date().toLocaleTimeString();
+    document.getElementById("hora-actual").innerText= hora;
+  }
+  setInterval(actualizarHora, 1000);
+  actualizarHora();
+  function
+  mostrarAyuda() {
+    document.getElementById("modalAyuda").style.display = "block";
+  }
+  function
+  cerrarAyuda() {
+    document.getElementById("modalAyuda").style.display = "none";
+  }
+ </script>
+</body>
+</html>

@@ -1,0 +1,337 @@
+ /* ===================== RESET ===================== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #6a11cb); /* azul → morado */
+  color: white;
+}
+
+/* ===================== ENCABEZADO ===================== */
+header {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 2px solid rgba(255,255,255,0.25);
+}
+
+/* ===================== INFO DEL PROYECTO ===================== */
+.info-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: 20px auto;
+  flex-wrap: wrap;
+}
+
+.info-box {
+  background: rgba(255,255,255,0.1);
+  padding: 18px 25px;
+  border-radius: 16px;
+  width: 320px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.info-box p {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+/* ===================== MENÚ PRINCIPAL (HORIZONTAL) ===================== */
+.menu-container {
+  width: 100%;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.menu-container h2 {
+  font-size: 26px;
+  margin-bottom: 25px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+.menu-items {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.menu-item {
+  width: 180px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 18px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+  transition: transform .3s, background .3s;
+}
+
+.menu-item:hover {
+  transform: translateY(-8px);
+  background: rgba(255,255,255,0.28);
+}
+
+.menu-item img {
+  width: 90px;
+  height: 90px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* ===================== PIE DE PÁGINA ===================== */
+footer {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 15px;
+  color: #fff;
+  font-size: 15px;
+  margin-top: 30px;
+  border-top: 2px solid rgba(255,255,255,0.25);
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 600px) {
+  .menu-items { flex-direction: column; align-items: center; }
+  .menu-item { width: 80%; }
+  .info-container { flex-direction: column; align-items: center; gap: 15px; }
+}
+.img-registro {
+    width: 80%;
+    display: block;
+    margin: 20px auto 0 auto; /* sube la imagen moviendo margen superior */
+}
+.contenido-registro {
+    margin-top: 0; /* súbelo o bájalo cambiando el número */
+}
+/* CUADRO DE LA IMAGEN ORGANIZADO EN COLUMNA */
+.imagen-usuario {
+    width: 35%;
+    background: rgba(255,255,255,0.15);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column; /* PONE FOTO ARRIBA Y INFO ABAJO */
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+}
+
+/* INFO EXTRA DEL LADO IZQUIERDO */
+.info-extra {
+    color: white;
+    background: rgba(0,0,0,0.3);
+    padding: 10px;
+    width: 90%;
+    border-radius: 10px;
+    font-size: 14px;
+    text-align: left;
+}
+/* Contenedor de la imagen y formulario */
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* sube los elementos */
+    width: 90%;
+    max-width: 1100px;
+    margin: 10px auto 0 auto; /* sube todo */
+    gap: 20px;
+}
+
+/* Cuadro de la imagen 3x4 */
+.imagen-usuario {
+    width: 35%;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column; /* pone la imagen arriba y la info abajo */
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    gap: 10px; /* separa imagen e info */
+}
+
+/* Imagen */
+.imagen-usuario img {
+    width: 90%;
+    max-height: 350px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Info adicional debajo de la imagen */
+.info-extra {
+    color: white;
+    background: rgba(0,0,0,0.3);
+    padding: 10px;
+    border-radius: 10px;
+    width: 90%; /* ajusta ancho del recuadro */
+    text-align: center;
+    margin-top: 5px; /* separa un poquito de la imagen */
+}
+.contenedor {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 90%;
+    max-width: 1100px;
+    margin: 10px auto 0 auto;
+    gap: 20px;
+}
+
+/* Imagen 3x4 */
+.imagen-usuario {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.imagen-usuario img {
+    width: 90%;
+    max-height: 350px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Info debajo de la imagen */
+.info-extra {
+    color: white;
+    background: rgba(0,0,0,0.3);
+    padding: 10px;
+    border-radius: 10px;
+    width: 35%; /* mismo ancho que la imagen */
+    text-align: center;
+    margin-top: 5px;
+}
+.contenedor {
+    display: flex;
+    flex-direction: row; /* imagen + info a la izquierda, formulario a la derecha */
+    justify-content: center;
+    align-items: flex-start;
+    width: 90%;
+    max-width: 1100px;
+    margin: 20px auto 0 auto;
+    gap: 20px;
+}
+
+/* Imagen + info */
+.imagen-usuario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35%;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 15px;
+    border-radius: 10px;
+    gap: 10px;
+}
+
+.imagen-usuario img {
+    width: 100%;   /* ahora ocupa todo el ancho del cuadro */
+    max-height: 350px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.info-extra {
+    width: 100%;
+    text-align: center;
+    background: rgba(0,0,0,0.3);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.info-extra input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* Formulario */
+.formulario {
+    width: 60%; /* ahora ocupa más espacio */
+    background: rgba(255, 255, 255, 0.18);
+    padding: 20px;
+    border-radius: 15px;
+}
+.col-izquierda {
+    width: 35%;
+    display: flex;
+    justify-content: center; /* centra la columna izquierda horizontalmente */
+}
+
+.imagen-usuario {
+    display: flex;
+    flex-direction: column; /* apila imagen y info verticalmente */
+    align-items: center;    /* centra la imagen horizontalmente */
+    background: rgba(255, 255, 255, 0.15);
+    padding: 15px;
+    border-radius: 10px;
+    gap: 15px; /* espacio entre imagen y info */
+}
+
+.imagen-usuario img {
+    width: 90%;      /* ocupa casi todo el cuadro */
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.info-extra {
+    width: 100%;
+    text-align: center;
+    background: rgba(0,0,0,0.3);
+    padding: 10px;
+    border-radius: 10px;
+}
+/* Contenedor principal: columna izquierda + columna derecha */
+.contenedor {
+    display: flex;
+    justify-content: space-between; /* espacio entre las columnas */
+    align-items: flex-start;        /* todas empiezan desde arriba */
+    width: 90%;
+    max-width: 1100px;
+    margin: 20px auto;
+    gap: 20px;
+}
+
+/* Columna izquierda */
+.col-izquierda {
+    width: 35%;                    /* ancho fijo para la imagen */
+    display: flex;
+    flex-direction: column;        /* apila imagen y info verticalmente */
+    align-items: center;           /* centra todo horizontalmente */
+}
+
+/* Cuadro de imagen */
+.imagen-usuario {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* espacio entre imagen y info */
+}
+
+.imagen-usuario img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+

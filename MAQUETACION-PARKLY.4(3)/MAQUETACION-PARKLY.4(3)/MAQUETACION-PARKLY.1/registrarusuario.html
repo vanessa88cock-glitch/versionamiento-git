@@ -1,0 +1,238 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Usuario - PARKLY</title>
+    <link rel="stylesheet" href="usuario.css">
+    <style>
+        /* Fondo general */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #6a11cb);
+            color: white;
+            min-height: 100vh;
+        }
+
+        /* Encabezado */
+        header {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        /* Pie de página */
+        footer {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Contenedor principal */
+        .contenedor {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 90%;
+            max-width: 1100px;
+            margin: 30px auto;
+            gap: 20px;
+        }
+
+        /* Columna izquierda */
+        .col-izquierda {
+            width: 35%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Cuadro de imagen + info */
+        .imagen-usuario {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .imagen-usuario img {
+            width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .info-extra {
+            width: 100%;
+            text-align: center;
+            background: rgba(0,0,0,0.3);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .info-extra input[type="date"] {
+            width: 80%;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 8px;
+            border: none;
+        }
+
+        /* Columna derecha */
+        .col-derecha {
+            width: 60%;
+        }
+
+        .formulario {
+            background: rgba(255, 255, 255, 0.18);
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .formulario h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #1e3c72;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #6a11cb;
+        }
+
+        .volver {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .volver a {
+            color: white;
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        Sistema PARKLY - Registrar Usuario
+    </header>
+
+    <div class="contenedor">
+
+        <!-- Columna izquierda: Imagen + info -->
+        <div class="col-izquierda">
+            <div class="imagen-usuario">
+                <img src="img/registro-usuario.jpg" alt="Foto usuario">
+                <div class="info-extra">
+                    <label>Fecha de registro:</label>
+                    <input type="date" id="fecha" required>
+                    <label>Cargo:</label>
+                    <select  id="rol" required>
+                        <option value="">Seleccione un cargo</option>
+                        <option>Administrador</option>
+                        <option>Auxiliar</option>
+                        <option>Usuario</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Columna derecha: Formulario -->
+        <div class="col-derecha">
+            <div class="formulario">
+                <h2>Formulario de Registro</h2>
+                <form>
+                    <label>Nombres</label>
+                    <input type="text" required>
+
+                    <label>Apellidos</label>
+                    <input type="text" required>
+
+                    <label>Tipo de documento</label>
+                    <select required>
+                        <option value="">Seleccione</option>
+                        <option>CC</option>
+                        <option>TI</option>
+                        <option>C.E</option>
+                        <option>Pasaporte</option>
+                    </select>
+
+                    <label>Número de documento</label>
+                    <input type="number" required>
+
+                    <label>Sexo</label>
+                    <select required>
+                        <option value="">Seleccione</option>
+                        <option>Femenino</option>
+                        <option>Masculino</option>
+                        <option>Otro</option>
+                    </select>
+
+                    <label>Teléfono</label>
+                    <input type="number" required>
+
+                    <label>Correo electrónico</label>
+                    <input type="email" required>
+
+                    <label>Contraseña</label>
+                    <input type="password" required>
+
+                    <label>Confirmar contraseña</label>
+                    <input type="password" required>
+
+                    <button type="submit">Registrar Usuario</button>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        © 2025 PARKLY - Sistema de Parqueaderos
+    </footer>
+
+    <script>
+        // Poner la fecha actual por defecto en el calendario
+        const fechaEl = document.getElementById("fecha");
+        const hoy = new Date();
+        const fechaFormateada = hoy.toISOString().split('T')[0]; // formato yyyy-mm-dd
+        fechaEl.value = fechaFormateada;
+    </script>
+
+</body>
+</html>

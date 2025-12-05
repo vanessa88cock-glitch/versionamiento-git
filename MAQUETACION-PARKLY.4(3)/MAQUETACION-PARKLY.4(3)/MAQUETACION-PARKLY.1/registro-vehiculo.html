@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Formulario Vehículo</title>
+<style>
+  /* Degradado azul a morado */
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #6a11cb);
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    background: rgba(0,0,0,0.3);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+  }
+
+  /* Reloj horizontal */
+  #clock {
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    border-left: 2px solid white;
+    padding-left: 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+  }
+
+  main {
+    flex: 1;
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  /* Formulario lado izquierdo */
+  form {
+    background: rgba(255,255,255,0.15);
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 300px;
+  }
+
+  form label {
+    font-weight: bold;
+  }
+
+  form input, form select {
+    padding: 6px 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+  }
+
+  /* Contenedor derecho */
+  #rightSide {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Foto del vehículo */
+  #vehiclePhoto {
+    background: rgba(255,255,255,0.15);
+    border-radius: 10px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  #vehiclePhoto span {
+    opacity: 0.7;
+  }
+
+  /* Recibo */
+  #receipt {
+    background: rgba(255,255,255,0.15);
+    border-radius: 10px;
+    padding: 15px;
+    height: 300px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    font-family: monospace;
+    color: #e0e0e0;
+  }
+
+  /* Botón imprimir */
+  #printBtn {
+    margin-top: 10px;
+    padding: 10px;
+    background: #6a11cb;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+  }
+
+  #printBtn:hover {
+    background: #1e3c72;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-content">
+    <h1>PARKLY - Registro de Vehiculo</h1>
+  </div>
+</header>
+
+<main>
+  <form id="vehicleForm">
+    <label for="ticket">Tiquete:</label>
+    <input type="text" id="ticket" name="ticket" placeholder="Número de tiquete" required />
+
+    <label for="plate">Placa:</label>
+    <input type="text" id="plate" name="plate" placeholder="ABC-123" required />
+
+    <label for="paymentType">Tipo Cobro:</label>
+    <select id="paymentType" name="paymentType" required>
+      <option value="hora">Hora</option>
+      <option value="dia">Minuto</option>
+      <option value="mes">Dia</option>
+    </select>
+
+    <label for="vehicleType">Tipo Vehículo:</label>
+    <select id="vehicleType" name="vehicleType" required>
+      <option value="carro">Carro</option>
+      <option value="moto">Moto</option>
+      <option value="bicicleta">Bicicleta</option>
+    </select>
+
+    <label>Ingreso:</label>
+    <input type="datetime-local" id="entryDate" name="entryDate" required />
+
+ <label for="paymentOptions">Usuario:</label>
+<select id="paymentOptions" name="paymentOptions">
+    <option value="">Selecciona una opción</option>
+    <option value="tarjeta_credito">Administrador</option>
+    <option value="efectivo">Auxiliar</option>
+</select>
+   
+
+   <label for="paymentOptions">Medios de Pago:</label>
+<select id="paymentOptions" name="paymentOptions">
+    <option value="">Selecciona una opción</option>
+    <option value="tarjeta_credito">Tarjeta de Crédito</option>
+    <option value="efectivo">Efectivo</option>
+    <option value="transferencia">Transferencia</option>
+</select>
+
+    <label for="totalPayment">Total Pago:</label>
+    <input type="number" id="totalPayment" name="totalPayment" value="0" min="0" readonly />
+    
+    <button type="button" onclick="generateReceipt()">Generar Recibo</button>
+  </form>
+
+  <div id="rightSide">
+    <div id="vehiclePhoto">
+      <span>Espacio para Foto del Vehículo</span>
+    </div>
+
+    <div>
+      <div id="receipt">Aquí se mostrará el recibo...</div>
+      <button id="printBtn" onclick="printReceipt()">Imprimir</button>
+    </div>
+  </div>
+</main>
+<footer style="background: rgba(0,0,0,0.5); padding: 10px; text-align: center;">
+  <p>© 2025 PARKLY - Todos los derechos reservados</p>
+</footer>
+<script src="js/registrov.js"></script>
+</body>
+</html>
+```
+<script>
+  // Reloj en tiempo real horizontal
+  function updateClock() {
+    var clock = document.getElementById('clock');
+    var now = new Date();
+    // Formato 24 horas para Colombia/España
+    var timeString = now.toLocaleTimeString('es-ES', { hour12: false });
+    clock.textContent = timeString;
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+
+  // Generar recibo en el div #receipt
+  function generateReceipt() {
+    var ticket = document.getElementById('ticket').value.trim() || 'N/A';
+    var plate = document.getElementById('plate').value.trim() || 'N/A';
+    var paymentType = document.getElementById('paymentType').value.toUpperCase() || 'N/A';
+    var vehicleType = document.getElementById('vehicleType').value.toUpperCase() || 'N/A';
+    var entryDate = document.getElementById('entryDate').value;
+    var entryUser = document.getElementById('entryUser').value.trim() || 'N/A';
+    var exitDate = document.getElementById('exitDate').value;
+    var exitUser = document.getElementById('exitUser').value.trim() || 'N/A';
+    var totalPayment = document.getElementById('totalPayment').value || '0.00';
+
+    var receiptText = "\n--- RECIBO DE PAGO ---\n\n";
+    receiptText += "Tiquete: " + ticket + "\n";
+    receiptText += "Placa: " + plate + "\n";
+    receiptText += "Tipo Cobro: " + paymentType + "\n";
+    receiptText += "Tipo Vehículo: " + vehicleType + "\n\n";
+
+    // formatear fechas si existen //
+    }
+  

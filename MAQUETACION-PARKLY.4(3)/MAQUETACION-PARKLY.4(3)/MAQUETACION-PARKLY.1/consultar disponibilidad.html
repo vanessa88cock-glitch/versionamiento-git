@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar Disponibilidad - PARKLY</title>
+    <link rel="stylesheet" href="CSS/consultar.css"> <!-- Asegúrate de que esta ruta sea correcta -->
+</head>
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="header">
+        <div class="header-box">Proyecto:<br> Sistema de Gestión de Parqueaderos</div>
+        <div class="header-box">Formación:<br> Tecnología en ADSO</div>
+        <div class="header-box">Aprendiz:<br> Leidy Vanessa Prieto Cock</div>
+    </header>
+
+    <!-- CONTENIDO CENTRAL -->
+    <div class="page-wrap">
+        <div class="menu-container">
+            <h1>Consulta de Disponibilidad</h1>
+ </div>
+
+            <!-- NUEVO FORMULARIO DE SELECCIÓN -->
+            <div class="selector-container">
+                <label for="tipoVehiculo">Seleccione el tipo de vehículo:</label>
+                <div class="select-wrapper">
+                    <select id="tipoVehiculo" onchange="mostrarDisponibilidad()">
+                        <option value="" disabled selected>-- Elija una opción --</option>
+                        <option value="carro">Carro</option>
+                        <option value="moto">Moto</option>
+                        <option value="bicicleta">Bicicleta</option>
+                    </select>
+                    <span class="arrow">▼</span>
+                </div>
+            </div>
+            <!-- RESULTADO -->
+            <div class="disponibilidad-box" id="resultadoCupos">
+                <p>Seleccione un tipo de vehículo arriba para ver la disponibilidad.</p>
+            </div>
+            
+            <div class="info-general">
+                <p><strong>Total de cupos:</strong> 50</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+        <p>© 2025 PARKLY - Sistema de Gestión de Parqueaderos</p>
+    </footer>
+    
+    <!-- SCRIPT PARA SIMULAR LA LÓGICA DE CUPOS -->
+    <script>
+        const cupos = {
+            carro: 20,
+            moto: 15,
+            bicicleta: 15
+        };
+
+        function mostrarDisponibilidad() {
+            const selectElement = document.getElementById('tipoVehiculo');
+            const tipoSeleccionado = selectElement.value;
+            const resultadoDiv = document.getElementById('resultadoCupos');
+            
+            if (tipoSeleccionado && cupos[tipoSeleccionado] !== undefined) {
+                const disponibles = cupos[tipoSeleccionado];
+                resultadoDiv.innerHTML = `<p><strong>Cupos disponibles para ${tipoSeleccionado.toUpperCase()}:</strong> ${disponibles}</p>`;
+            } else {
+                resultadoDiv.innerHTML = `<p>Seleccione un tipo de vehículo arriba para ver la disponibilidad.</p>`;
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+
+

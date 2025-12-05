@@ -1,0 +1,93 @@
+ body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #4b0082, #5a00d4, #009dff);
+}
+
+.contenedor {
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    background: #ffffffcc;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.encabezado {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    width: 130px;
+    border-radius: 10px;
+}
+
+.titulo-empresa h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.titulo-empresa h2 {
+    margin: 0;
+    color: red;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.nombre-destacado {
+    font-size: 28px;
+    color: #c30000;
+    font-weight: bold;
+}
+
+.formulario {
+    margin-top: 20px;
+    background: #cfe8f5;
+    padding: 20px;
+    border-radius: 10px;
+    box-sizing: border-box; /* ESTA ES LA CLAVE */
+}
+
+.fila {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+label {
+    width: 120px;
+    background: #004d8c;
+    color: white;
+    padding: 6px;
+    text-align: right;
+    border-radius: 4px;
+}
+
+input, select {
+    flex: 1;
+    padding: 6px;
+    border: 1px solid #999;
+    border-radius: 4px;
+}
+
+.botones {
+    margin-top: 20px;
+    text-align: center;
+}
+
+button {
+    padding: 8px 12px;
+    margin: 4px;
+    font-size: 18px;
+    border: none;
+    background: #dde7f5;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.fila input {
+    max-width: 250px;   /* MISMO tamaño para todos */
+}

@@ -1,0 +1,64 @@
+ html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100vh; /* Altura total de la pantalla */
+}
+
+.left, .right {
+  flex: 1; /* Cada uno ocupa la mitad */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra verticalmente */
+  align-items: center; /* Centra horizontalmente */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.left {
+  background: #0072e3; /* Color de fondo para la izquierda */
+  color: white;
+}
+
+.left img {
+  max-width: 80%;
+  max-height: 60vh;
+  object-fit: contain;
+}
+
+.texto-abajo {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.right {
+  background: white; /* Fondo blanco para la derecha */
+  color: black;
+  overflow-y: auto; /* Permite scroll si el contenido es muy largo */
+  padding: 40px;
+}
+
+label {
+  display: block; /* Hace que el label ocupe toda la línea */
+  margin-bottom: 10px; /* Espacio debajo del label */
+}
+
+input[type="date"] {
+  width: 100%; /* Hace que el input ocupe el ancho completo */
+  padding: 10px; /* Espaciado interno */
+  margin-bottom: 20px; /* Espacio debajo del input */
+  border: 1px solid #ccc; /* Borde del input */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+p {
+  margin: 20px 0 0; /* Espaciado para el párrafo */
+}

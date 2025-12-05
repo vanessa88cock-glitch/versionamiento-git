@@ -1,0 +1,102 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0; /* Fondo general azul igual que las otras paginas */
+    background-color: #0c337a;
+    color: black;
+}
+
+/* Encabezado con degradado */
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* Degradado de azul a morado */
+    background: linear-gradient(to right, #6a5acd, #6a5acd); 
+    color: white;
+    padding: 20px 0;
+    text-align: center; /* Asegura que el texto dentro de los divs esté centrado */
+}
+
+.header-box {
+    flex: 1;
+    padding: 0 10px; /* Espaciado interno */
+}
+
+/* Contenido central */
+.page-wrap {
+    padding: 30px;
+    max-width: 800px;
+    margin: 20px auto; /* Degradado azul morado */
+    background: linear-gradient(135deg, white,);
+    box-shadow: 0 4px 8px white;
+    border-radius: 8px;
+}
+
+.menu-container h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+}
+
+/* Estilos para el selector (la barra) */
+.selector-container {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.select-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 250px; /* Ancho deseado para la barra */
+}
+
+#tipoVehiculo {
+    width: 100%;
+    padding: 10px 30px 10px 15px;
+    border: 2px solid #007BFF;
+    border-radius: 25px; /* Bordes redondeados para la barra */
+    background-color: white;
+    appearance: none; /* Oculta la flecha nativa del navegador */
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.arrow {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #007BFF;
+    pointer-events: none; /* Asegura que el click pase al select */
+}
+
+
+.disponibilidad-box {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #007BFF;
+    border-radius: 8px;
+    background-color: #f0f8ff; /* Azul muy claro que contraste con el texto */
+    text-align: center;
+    min-height: 50px;
+}
+
+.info-general {
+    margin-top: 20px;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    font-size: 0.9em;
+}
+
+/* Pie de página */
+.footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #6a5acd; /* Morado para el pie de página */
+    color: white;
+    width: 100%;
+    margin-top: 20px;
+}
+
